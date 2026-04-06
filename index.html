@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiger Room — Tools for K-pop Fans</title>
+<meta name="description" content="Tiger Room builds mobile tools for global K-pop fans. Fangeul: Korean keyboard, converter, romanizer & fan phrases.">
+<meta property="og:title" content="Tiger Room — Tools for K-pop Fans">
+<meta property="og:description" content="Mobile tools for global K-pop fans.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tigerroom.app">
+<meta property="og:image" content="https://tigerroom.app/assets/tiger-banner.png">
+<link rel="icon" type="image/png" href="assets/tiger-logo.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #121212;
+    --bg-card: #1c1c1c;
+    --bg-card-hover: #242424;
+    --accent: #e8a030;
+    --teal: #3dd6b5;
+    --text: #e8eaed;
+    --text-dim: #8a8a8a;
+    --radius: 16px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* --- Layout --- */
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* --- Hero banner --- */
+  .hero-wrap {
+    width: 100%;
+    background: #1a1a1a;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .hero-banner {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center 55%;
+    display: block;
+  }
+
+  /* --- Dev icon --- */
+  .dev-icon-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: -54px;
+    margin-bottom: 1rem;
+  }
+  .dev-icon {
+    width: 64px; height: 64px;
+    border-radius: 18px;
+    border: 3px solid #e8a030;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  }
+
+  /* --- Section label --- */
+  .section-label {
+    font-family: 'Comfortaa', cursive;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  /* --- App Card --- */
+  .app-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: background 0.25s, border-color 0.25s, transform 0.25s;
+  }
+  .app-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(61, 214, 181, 0.2);
+    transform: translateY(-2px);
+  }
+  .app-card-link {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex: 1;
+    min-width: 0;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .app-icon {
+    width: 60px; height: 60px;
+    border-radius: 14px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  }
+
+  .app-info { flex: 1; min-width: 0; }
+
+  .app-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+  }
+
+  .app-desc {
+    color: var(--text-dim);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .app-right {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+  .app-right .app-arrow {
+    color: var(--text-dim);
+    font-size: 1.4rem;
+    transition: transform 0.2s, color 0.2s;
+  }
+  .app-card:hover .app-arrow {
+    transform: translateX(3px);
+    color: var(--teal);
+  }
+  .play-badge { transition: opacity 0.2s; }
+  .play-badge:hover { opacity: 0.8; }
+  .play-badge img { height: 32px; }
+
+  /* --- Footer --- */
+  footer {
+    margin-top: auto;
+    padding: 2.5rem 0 2rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--accent); }
+
+  .footer-copy {
+    color: rgba(138, 138, 138, 0.4);
+    font-size: 0.78rem;
+  }
+
+  /* --- Mobile --- */
+  @media (max-width: 600px) {
+    .app-card { padding: 1.25rem; gap: 1rem; }
+    .app-icon { width: 52px; height: 52px; border-radius: 12px; }
+  }
+
+  /* --- Animation --- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate { animation: fadeUp 0.5s ease-out both; }
+  .d1 { animation-delay: 0.1s; }
+  .d2 { animation-delay: 0.22s; }
+  .d3 { animation-delay: 0.34s; }
+</style>
+</head>
+<body>
+
+<div class="hero-wrap animate">
+  <img class="hero-banner" src="assets/tiger-banner.png" alt="Tiger Room">
+</div>
+
+<div class="container">
+  <div class="dev-icon-wrap animate d1">
+    <img class="dev-icon" src="assets/tiger-logo.png" alt="Tiger Room" width="64" height="64">
+  </div>
+
+  <p class="section-label animate d2">Apps</p>
+
+  <div class="app-card animate d3">
+    <a class="app-card-link" href="https://fangeul.tigerroom.app" target="_blank" rel="noopener">
+      <img class="app-icon" src="assets/fangeul-icon.png" alt="Fangeul" width="60" height="60">
+      <div class="app-info">
+        <div class="app-name">Fangeul</div>
+        <div class="app-desc">Korean keyboard, converter, romanizer & fan phrases — all from a floating bubble.</div>
+      </div>
+    </a>
+    <div class="app-right">
+      <a href="https://play.google.com/store/apps/details?id=com.tigerroom.fangeul" target="_blank" rel="noopener">
+        <img class="play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="32">
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="mailto:tigerroom.dev@gmail.com">Contact</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Tiger Room</p>
+  </div>
+</footer>
+
+</body>
+</html>
