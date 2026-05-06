@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tiger Room — Tools for K-pop Fans</title>
-<meta name="description" content="Tiger Room builds mobile tools for global K-pop fans. Fangeul: Korean keyboard, converter, romanizer & fan phrases.">
-<meta property="og:title" content="Tiger Room — Tools for K-pop Fans">
-<meta property="og:description" content="Mobile tools for global K-pop fans.">
+<title>Tiger Room — Mobile Apps & Games</title>
+<meta name="description" content="Tiger Room builds mobile apps and games. Fangeul: Korean keyboard for K-pop fans. One Scene Mystery: short noir mystery game.">
+<meta property="og:title" content="Tiger Room — Mobile Apps & Games">
+<meta property="og:description" content="Mobile apps and games from Tiger Room — Fangeul and One Scene Mystery.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tigerroom.app">
 <meta property="og:image" content="https://tigerroom.app/assets/tiger-banner.png">
@@ -103,6 +103,7 @@
     border-color: rgba(61, 214, 181, 0.2);
     transform: translateY(-2px);
   }
+  .app-card + .app-card { margin-top: 1rem; }
   .app-card-link {
     display: flex;
     align-items: center;
@@ -198,6 +199,7 @@
   .d1 { animation-delay: 0.1s; }
   .d2 { animation-delay: 0.22s; }
   .d3 { animation-delay: 0.34s; }
+  .d4 { animation-delay: 0.46s; }
 </style>
 </head>
 <body>
@@ -223,6 +225,21 @@
     </a>
     <div class="app-right">
       <a href="https://play.google.com/store/apps/details?id=com.tigerroom.fangeul" target="_blank" rel="noopener">
+        <img class="play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="32">
+      </a>
+    </div>
+  </div>
+
+  <div class="app-card animate d4">
+    <a class="app-card-link" href="https://onescenemystery.tigerroom.app" target="_blank" rel="noopener">
+      <img class="app-icon" src="assets/osm-icon.png" alt="One Scene Mystery" width="60" height="60">
+      <div class="app-info">
+        <div class="app-name">One Scene Mystery</div>
+        <div class="app-desc">Solve seven short noir mysteries. One scene, three questions, one hidden truth.</div>
+      </div>
+    </a>
+    <div class="app-right">
+      <a href="https://play.google.com/store/apps/details?id=com.tigerroom.onescenemystery" target="_blank" rel="noopener">
         <img class="play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="32">
       </a>
     </div>
