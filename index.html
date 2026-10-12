@@ -3,257 +3,406 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tiger Room — Mobile Apps & Games</title>
-<meta name="description" content="Tiger Room builds mobile apps and games. Fangeul: Korean keyboard for K-pop fans. One Scene Mystery: short noir mystery game.">
-<meta property="og:title" content="Tiger Room — Mobile Apps & Games">
-<meta property="og:description" content="Mobile apps and games from Tiger Room — Fangeul and One Scene Mystery.">
+<title>Tiger Room — Mobile Game Studio</title>
+<meta name="description" content="Tiger Room is an independent mobile game studio in Seoul, Korea. Makers of Malang Pick: ASMR — pick, stretch and collect squishy friends — and the Fangeul Korean keyboard app.">
+<meta name="theme-color" content="#fffaf3">
+<meta property="og:title" content="Tiger Room — Mobile Game Studio">
+<meta property="og:description" content="Cozy, tactile mobile games from Tiger Room. Play Malang Pick: ASMR on Google Play.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tigerroom.app">
-<meta property="og:image" content="https://tigerroom.app/assets/tiger-banner.png">
-<link rel="icon" type="image/png" href="assets/tiger-logo.png">
+<meta property="og:image" content="https://tigerroom.app/assets/brand/og-1200x630.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/brand/paw.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/brand/favicon-16.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/brand/favicon-48.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Tiger Room","url":"https://tigerroom.app","logo":"https://tigerroom.app/assets/brand/tigerroom-logo-600.png","email":"tigerroom.official@gmail.com","address":{"@type":"PostalAddress","streetAddress":"16 Maeheon-ro","addressLocality":"Seocho-gu, Seoul","addressCountry":"KR"}}
+</script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
-
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
   :root {
-    --bg: #121212;
-    --bg-card: #1c1c1c;
-    --bg-card-hover: #242424;
-    --accent: #e8a030;
-    --teal: #3dd6b5;
-    --text: #e8eaed;
-    --text-dim: #8a8a8a;
-    --radius: 16px;
+    color-scheme: light;
+    --bg: #fffaf3;
+    --surface: #ffffff;
+    --surface-2: #f7f3fb;
+    --ink: #1f1a2e;
+    --ink-soft: #5d5873;
+    --ink-faint: #8d88a3;
+    --line: #ece6f2;
+    --brand: #f08a24;
+    --brand-deep: #c4650c;
+    --pink: #ec5c9e;
+    --lav: #efe8ff;
+    --mint: #dff6ee;
+    --radius: 22px;
+    --shadow: 0 1px 2px rgba(31, 26, 46, .05), 0 12px 32px rgba(31, 26, 46, .07);
+    --sans: 'Noto Sans KR', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --display: 'Plus Jakarta Sans', 'Noto Sans KR', 'Noto Sans JP', -apple-system, sans-serif;
   }
+  html[lang="ja"] { --sans: 'Noto Sans JP', 'Noto Sans KR', -apple-system, sans-serif; --display: 'Plus Jakarta Sans', 'Noto Sans JP', -apple-system, sans-serif; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  html:lang(ko) body { word-break: keep-all; overflow-wrap: break-word; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  .wrap { width: min(1120px, 100% - 32px); margin: 0 auto; }
 
-  html { scroll-behavior: smooth; }
+  /* header */
+  .topbar { position: sticky; top: 0; z-index: 20; background: rgba(255, 250, 243, .86); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--line); }
+  .topbar .wrap { display: flex; align-items: center; gap: 24px; height: 68px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--display); font-weight: 800; font-size: 1.12rem; letter-spacing: -.01em; }
+  .brand img { display: block; }
+  .brand .brand-face { height: 34px; width: auto; }
+  .brand .brand-word { height: 21px; width: auto; margin-top: 3px; }
+  .nav { display: flex; gap: 22px; margin-left: auto; }
+  .nav a { text-decoration: none; color: var(--ink-soft); font-weight: 500; font-size: .95rem; }
+  .nav a:hover { color: var(--ink); }
+  .lang { display: flex; gap: 2px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+  .lang button { border: 0; background: none; font: 600 .78rem var(--display); color: var(--ink-faint); padding: 5px 10px; border-radius: 999px; cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(31, 26, 46, .12); }
 
-  body {
-    font-family: 'DM Sans', -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
+  /* hero */
+  .hero { padding: 72px 0 56px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font: 700 .8rem var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--brand-deep); background: #fff1e3; padding: 6px 12px; border-radius: 999px; }
+  .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--brand); }
+  h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.1rem, 4.6vw, 3.5rem); line-height: 1.15; letter-spacing: -.025em; margin: 18px 0 18px; }
+  html[lang="ko"] h1, html[lang="ja"] h1 { letter-spacing: -.01em; line-height: 1.25; }
+  .lead { font-size: 1.1rem; color: var(--ink-soft); max-width: 34em; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 14px; font-weight: 700; text-decoration: none; font-size: .98rem; transition: transform .15s, box-shadow .15s, background .15s; }
+  .btn.primary { background: var(--ink); color: #fff; box-shadow: 0 6px 18px rgba(31, 26, 46, .18); }
+  .btn.primary:hover { transform: translateY(-1px); }
+  .btn.ghost { background: var(--surface); border: 1px solid var(--line); color: var(--ink); }
+  .btn.ghost:hover { background: var(--surface-2); }
+  .hero-art { position: relative; aspect-ratio: 1 / .86; border-radius: 32px; background: radial-gradient(120% 90% at 30% 20%, #fff 0%, #fdeef5 38%, #ece6ff 72%, #dff4ff 100%); box-shadow: var(--shadow); overflow: hidden; }
+  .hero-art::after { content: ""; position: absolute; inset: auto 0 0 0; height: 32%; background: linear-gradient(to top, rgba(255, 255, 255, .55), transparent); }
+  .friend { position: absolute; width: 34%; filter: drop-shadow(0 14px 18px rgba(80, 60, 120, .18)); animation: bob 5.5s ease-in-out infinite; z-index: 1; }
+  .friend.f1 { left: 33%; top: 24%; width: 38%; animation-delay: -.8s; }
+  .friend.f2 { left: 4%; top: 8%; width: 30%; animation-delay: -2.2s; }
+  .friend.f3 { right: 3%; top: 6%; width: 30%; animation-delay: -3.4s; }
+  .friend.f4 { left: 6%; bottom: 7%; width: 31%; animation-delay: -1.5s; }
+  .friend.f5 { right: 5%; bottom: 6%; width: 31%; animation-delay: -4.1s; }
+  @keyframes bob { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-10px) rotate(1.5deg); } }
 
-  /* --- Layout --- */
-  .container {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
+  /* sections */
+  section.block { padding: 64px 0; }
+  .sec-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 26px; }
+  .kicker { font: 700 .8rem var(--display); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
+  h2 { font-family: var(--display); font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.2rem); letter-spacing: -.02em; line-height: 1.2; margin-top: 6px; }
 
-  /* --- Hero banner --- */
-  .hero-wrap {
-    width: 100%;
-    background: #1a1a1a;
-    overflow: hidden;
-    margin-bottom: 2rem;
-  }
-  .hero-banner {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    object-position: center 55%;
-    display: block;
-  }
+  /* featured game */
+  .feature { background: var(--surface); border: 1px solid var(--line); border-radius: 28px; box-shadow: var(--shadow); overflow: hidden; }
+  .feature-top { display: grid; grid-template-columns: 1.1fr 1fr; }
+  .feature-media { background: #ffe9f2; }
+  .feature-media img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 1024 / 500; }
+  .feature-body { padding: 32px 34px; display: flex; flex-direction: column; gap: 16px; }
+  .game-head { display: flex; align-items: center; gap: 14px; }
+  .game-head img { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 4px 12px rgba(31, 26, 46, .14); }
+  h3 { font-family: var(--display); font-weight: 800; font-size: 1.35rem; line-height: 1.25; letter-spacing: -.01em; }
+  .tag { color: var(--pink); font-weight: 700; font-size: .95rem; }
+  .desc { color: var(--ink-soft); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+  .chips li { font-size: .84rem; font-weight: 600; color: var(--ink-soft); background: var(--surface-2); border: 1px solid var(--line); padding: 5px 11px; border-radius: 999px; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: auto; }
+  .play-badge img { height: 52px; width: auto; margin: -8px -6px; }
+  .textlink { font-weight: 700; color: var(--ink); text-decoration: none; border-bottom: 2px solid #ffd7a8; padding-bottom: 1px; }
+  .textlink:hover { border-color: var(--brand); }
+  .shots { border-top: 1px solid var(--line); background: linear-gradient(180deg, #fbf8ff, #fff); padding: 26px 34px 30px; }
+  .shots-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .shots-row img { width: 100%; height: auto; aspect-ratio: 540 / 1170; object-fit: cover; border-radius: 16px; box-shadow: 0 6px 18px rgba(31, 26, 46, .12); background: #eee; }
 
-  /* --- Dev icon --- */
-  .dev-icon-wrap {
-    display: flex;
-    justify-content: center;
-    margin-top: -54px;
-    margin-bottom: 1rem;
-  }
-  .dev-icon {
-    width: 64px; height: 64px;
-    border-radius: 18px;
-    border: 3px solid #e8a030;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-  }
+  /* apps */
+  .app-row { display: flex; align-items: center; gap: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; box-shadow: 0 1px 2px rgba(31, 26, 46, .04); }
+  .app-row > img { width: 56px; height: 56px; border-radius: 14px; flex: none; }
+  .app-row .info { flex: 1; min-width: 0; }
+  .app-row h3 { font-size: 1.1rem; }
+  .app-row .label { display: inline-block; font-size: .72rem; font-weight: 700; color: #2a8f72; background: var(--mint); padding: 2px 8px; border-radius: 6px; margin-left: 8px; vertical-align: 2px; }
+  .app-row .desc { font-size: .94rem; }
+  .app-row .actions { margin-top: 0; flex: none; }
+  .app-row .play-badge img { height: 44px; }
 
-  /* --- Section label --- */
-  .section-label {
-    font-family: 'Comfortaa', cursive;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--accent);
-    margin-bottom: 0.75rem;
-  }
+  /* studio */
+  .studio { background: var(--surface-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .studio-intro { max-width: 46em; color: var(--ink-soft); font-size: 1.05rem; }
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 30px; }
+  .pillar { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+  .pillar .ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 14px; }
+  .pillar:nth-child(1) .ico { background: #fff1e3; color: var(--brand-deep); }
+  .pillar:nth-child(2) .ico { background: var(--mint); color: #2a8f72; }
+  .pillar:nth-child(3) .ico { background: var(--lav); color: #6b4fd6; }
+  .pillar h3 { font-size: 1.05rem; margin-bottom: 6px; }
+  .pillar p { color: var(--ink-soft); font-size: .94rem; }
 
-  /* --- App Card --- */
-  .app-card {
-    background: var(--bg-card);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    transition: background 0.25s, border-color 0.25s, transform 0.25s;
-  }
-  .app-card:hover {
-    background: var(--bg-card-hover);
-    border-color: rgba(61, 214, 181, 0.2);
-    transform: translateY(-2px);
-  }
-  .app-card + .app-card { margin-top: 1rem; }
-  .app-card-link {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    flex: 1;
-    min-width: 0;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-  }
+  /* footer */
+  footer { padding: 52px 0 40px; }
+  .foot { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 32px; }
+  .foot h4 { font: 700 .82rem var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+  .foot p, .foot li { color: var(--ink-soft); font-size: .92rem; }
+  .foot ul { list-style: none; display: grid; gap: 6px; }
+  .foot a { text-decoration: none; }
+  .foot a:hover { color: var(--ink); text-decoration: underline; }
+  .mail { font-weight: 700; color: var(--ink) !important; }
+  .legal { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--ink-faint); font-size: .8rem; display: grid; gap: 4px; }
 
-  .app-icon {
-    width: 60px; height: 60px;
-    border-radius: 14px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  @media (max-width: 900px) {
+    .hero .wrap, .feature-top { grid-template-columns: 1fr; }
+    .hero { padding: 40px 0 24px; }
+    .hero-art { max-width: 520px; width: 100%; margin: 0 auto; }
+    .shots-row { grid-template-columns: repeat(5, 46%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
+    .shots-row img { scroll-snap-align: start; }
+    .pillars, .foot { grid-template-columns: 1fr; }
+    .nav { display: none; }
+    .lang { margin-left: auto; }
   }
-
-  .app-info { flex: 1; min-width: 0; }
-
-  .app-name {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.15rem;
+  @media (max-width: 560px) {
+    .feature-body, .shots { padding-left: 20px; padding-right: 20px; }
+    .app-row { flex-wrap: wrap; }
+    .app-row .actions { width: 100%; }
+    section.block { padding: 48px 0; }
   }
-
-  .app-desc {
-    color: var(--text-dim);
-    font-size: 0.88rem;
-    line-height: 1.5;
-  }
-
-  .app-right {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.5rem;
-  }
-  .app-right .app-arrow {
-    color: var(--text-dim);
-    font-size: 1.4rem;
-    transition: transform 0.2s, color 0.2s;
-  }
-  .app-card:hover .app-arrow {
-    transform: translateX(3px);
-    color: var(--teal);
-  }
-  .play-badge { transition: opacity 0.2s; }
-  .play-badge:hover { opacity: 0.8; }
-  .play-badge img { height: 32px; }
-
-  /* --- Footer --- */
-  footer {
-    margin-top: auto;
-    padding: 2.5rem 0 2rem;
-    text-align: center;
-  }
-
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.5rem;
-  }
-
-  .footer-links a {
-    color: var(--text-dim);
-    text-decoration: none;
-    font-size: 0.82rem;
-    transition: color 0.2s;
-  }
-  .footer-links a:hover { color: var(--accent); }
-
-  .footer-copy {
-    color: rgba(138, 138, 138, 0.4);
-    font-size: 0.78rem;
-  }
-
-  /* --- Mobile --- */
-  @media (max-width: 600px) {
-    .app-card { padding: 1.25rem; gap: 1rem; }
-    .app-icon { width: 52px; height: 52px; border-radius: 12px; }
-  }
-
-  /* --- Animation --- */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate { animation: fadeUp 0.5s ease-out both; }
-  .d1 { animation-delay: 0.1s; }
-  .d2 { animation-delay: 0.22s; }
-  .d3 { animation-delay: 0.34s; }
-  .d4 { animation-delay: 0.46s; }
+  @media (prefers-reduced-motion: reduce) { .friend { animation: none; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
 
-<div class="hero-wrap animate">
-  <img class="hero-banner" src="assets/tiger-banner.png" alt="Tiger Room">
-</div>
-
-<div class="container">
-  <div class="dev-icon-wrap animate d1">
-    <img class="dev-icon" src="assets/tiger-logo.png" alt="Tiger Room" width="64" height="64">
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Tiger Room"><img class="brand-face" src="assets/brand/tiger-face.png" alt="" width="706" height="480"><img class="brand-word" src="assets/brand/tiger-word-ink.png" alt="Tiger Room" width="664" height="131"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#games" data-i18n="nav_games">Games</a>
+      <a href="#apps" data-i18n="nav_apps">Apps</a>
+      <a href="#studio" data-i18n="nav_studio">Studio</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="ko" aria-pressed="false">KO</button>
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ja" aria-pressed="false">JA</button>
+    </div>
   </div>
+</header>
 
-  <p class="section-label animate d2">Apps</p>
-
-  <div class="app-card animate d3">
-    <a class="app-card-link" href="https://fangeul.tigerroom.app" target="_blank" rel="noopener">
-      <img class="app-icon" src="assets/fangeul-icon.png" alt="Fangeul" width="60" height="60">
-      <div class="app-info">
-        <div class="app-name">Fangeul</div>
-        <div class="app-desc">Korean keyboard, converter, romanizer & fan phrases — all from a floating bubble.</div>
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow" data-i18n="eyebrow">Mobile game studio</span>
+        <h1 data-i18n="hero_title">Games you can feel at your fingertips.</h1>
+        <p class="lead" data-i18n="hero_lead">Tiger Room makes cozy, tactile mobile games — soft, squishy physics, satisfying sounds and characters worth collecting.</p>
+        <div class="cta">
+          <a class="btn primary" href="#games" data-i18n="cta_games">See our games</a>
+          <a class="btn ghost" href="#contact" data-i18n="cta_contact">Contact us</a>
+        </div>
       </div>
-    </a>
-    <div class="app-right">
-      <a href="https://play.google.com/store/apps/details?id=com.tigerroom.fangeul" target="_blank" rel="noopener">
-        <img class="play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="32">
-      </a>
-    </div>
-  </div>
-
-  <div class="app-card animate d4">
-    <a class="app-card-link" href="https://onescenemystery.tigerroom.app" target="_blank" rel="noopener">
-      <img class="app-icon" src="assets/osm-icon.png" alt="One Scene Mystery" width="60" height="60">
-      <div class="app-info">
-        <div class="app-name">One Scene Mystery</div>
-        <div class="app-desc">Solve seven short noir mysteries. One scene, three questions, one hidden truth.</div>
+      <div class="hero-art" aria-hidden="true">
+        <img class="friend f2" src="assets/malangpick/friend-bubble.webp" alt="">
+        <img class="friend f3" src="assets/malangpick/friend-macaron.webp" alt="">
+        <img class="friend f1" src="assets/malangpick/friend-mochi.webp" alt="">
+        <img class="friend f4" src="assets/malangpick/friend-cove.webp" alt="">
+        <img class="friend f5" src="assets/malangpick/friend-scoop.webp" alt="">
       </div>
-    </a>
-    <div class="app-right">
-      <a href="https://play.google.com/store/apps/details?id=com.tigerroom.onescenemystery" target="_blank" rel="noopener">
-        <img class="play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="32">
-      </a>
     </div>
-  </div>
-</div>
+  </section>
 
-<footer>
-  <div class="container">
-    <div class="footer-links">
-      <a href="mailto:tigerroom.dev@gmail.com">Contact</a>
+  <section class="block" id="games">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker" data-i18n="games_kicker">Featured game</div>
+          <h2 data-i18n="games_title">Games</h2>
+        </div>
+      </div>
+      <article class="feature">
+        <div class="feature-top">
+          <div class="feature-media"><img src="assets/malangpick/graphic-1024.webp" width="1024" height="500" alt="Malang Pick: ASMR"></div>
+          <div class="feature-body">
+            <div class="game-head">
+              <img src="assets/malangpick/icon-256.webp" width="64" height="64" alt="">
+              <div>
+                <h3 data-i18n="mp_name">Malang Pick: ASMR</h3>
+                <div class="tag" data-i18n="mp_tag">Pick, stretch, collect!</div>
+              </div>
+            </div>
+            <p class="desc" data-i18n="mp_desc">Cute squishies stretch under your fingers with satisfying ASMR sounds. Pick capsules from the Blue Ocean to the Dessert Café and build your collection. Free tickets every day.</p>
+            <ul class="chips">
+              <li data-i18n="mp_f1">Free to play</li>
+              <li data-i18n="mp_f2">Daily free tickets</li>
+              <li data-i18n="mp_f3">Korean · English · Japanese</li>
+              <li>Android</li>
+            </ul>
+            <div class="actions">
+              <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.tigerroom.malangpick" target="_blank" rel="noopener"><img data-badge src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="52"></a>
+              <a class="textlink" data-site="mallang" href="https://mallang.tigerroom.app/" target="_blank" rel="noopener" data-i18n="mp_site">Official website</a>
+            </div>
+          </div>
+        </div>
+        <div class="shots">
+          <div class="kicker" data-i18n="shots" style="margin-bottom:14px">Screenshots</div>
+          <div class="shots-row">
+            <img data-shot="1" src="assets/malangpick/shot-en-1.webp" alt="" loading="lazy" width="540" height="1170">
+            <img data-shot="2" src="assets/malangpick/shot-en-2.webp" alt="" loading="lazy" width="540" height="1170">
+            <img data-shot="3" src="assets/malangpick/shot-en-3.webp" alt="" loading="lazy" width="540" height="1170">
+            <img data-shot="4" src="assets/malangpick/shot-en-4.webp" alt="" loading="lazy" width="540" height="1170">
+            <img data-shot="5" src="assets/malangpick/shot-en-5.webp" alt="" loading="lazy" width="540" height="1170">
+          </div>
+        </div>
+      </article>
     </div>
-    <p class="footer-copy">&copy; 2026 Tiger Room</p>
+  </section>
+
+  <section class="block" id="apps" style="padding-top:8px">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="kicker" data-i18n="apps_kicker">Utility apps</div>
+          <h2 data-i18n="apps_title">Apps</h2>
+        </div>
+      </div>
+      <article class="app-row">
+        <img src="assets/fangeul-icon.png" width="56" height="56" alt="">
+        <div class="info">
+          <h3>Fangeul<span class="label" data-i18n="fg_label">Utility</span></h3>
+          <p class="desc" data-i18n="fg_desc">Korean keyboard, converter, romanizer and fan phrases for K-pop fans — all from a floating bubble.</p>
+        </div>
+        <div class="actions">
+          <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.tigerroom.fangeul" target="_blank" rel="noopener"><img data-badge src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="44"></a>
+          <a class="textlink" href="https://fangeul.tigerroom.app/" target="_blank" rel="noopener" data-i18n="fg_site">Website</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block studio" id="studio">
+    <div class="wrap">
+      <div class="kicker" data-i18n="studio_kicker">Studio</div>
+      <h2 data-i18n="studio_title">About Tiger Room</h2>
+      <p class="studio-intro" style="margin-top:14px" data-i18n="studio_text">Tiger Room is an independent mobile studio based in Seoul, Korea. We build games around touch and sound, and release them in Korean, English and Japanese.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V12"/><path d="M11 11.5v-2a1.5 1.5 0 0 1 3 0V12"/><path d="M14 10.5a1.5 1.5 0 0 1 3 0V12"/><path d="M17 11.5a1.5 1.5 0 0 1 3 0V16a6 6 0 0 1-6 6h-2a6 6 0 0 1-5-2.7L4.3 15a1.6 1.6 0 0 1 2.5-2l1.2 1.3"/></svg></div>
+          <h3 data-i18n="p1_t">Feel first</h3>
+          <p data-i18n="p1_d">Soft-body physics and recorded ASMR sounds make every touch respond.</p>
+        </div>
+        <div class="pillar">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3 data-i18n="p2_t">Safe for everyone</h3>
+          <p data-i18n="p2_d">Age-appropriate settings for younger players and clear privacy choices.</p>
+        </div>
+        <div class="pillar">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3 data-i18n="p3_t">Always growing</h3>
+          <p data-i18n="p3_d">New friends and themes keep arriving with updates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top"><img class="brand-face" src="assets/brand/tiger-face.png" alt="" width="706" height="480"><img class="brand-word" src="assets/brand/tiger-word-ink.png" alt="Tiger Room" width="664" height="131"></a>
+        <p style="margin-top:14px" data-i18n="contact_text">Business and support inquiries</p>
+        <p><a class="mail" href="mailto:tigerroom.official@gmail.com">tigerroom.official@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Malang Pick</h4>
+        <ul>
+          <li><a data-site="mallang" href="https://mallang.tigerroom.app/privacy-policy.html" data-i18n="l_privacy">Privacy Policy</a></li>
+          <li><a data-site="mallang" href="https://mallang.tigerroom.app/terms.html" data-i18n="l_terms">Terms of Service</a></li>
+          <li><a data-site="mallang" href="https://mallang.tigerroom.app/probability.html" data-i18n="l_prob">Drop rates</a></li>
+          <li><a data-site="mallang" href="https://mallang.tigerroom.app/account-deletion.html" data-i18n="l_delete">Account deletion</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fangeul</h4>
+        <ul>
+          <li><a href="https://fangeul.tigerroom.app/privacy-policy.html" data-i18n="l_privacy">Privacy Policy</a></li>
+          <li><a href="https://fangeul.tigerroom.app/terms.html" data-i18n="l_terms">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span data-i18n="biz">Tiger Room · Business registration no. 629-25-02059 · 16 Maeheon-ro, Seocho-gu, Seoul, Republic of Korea</span>
+      <span>&copy; 2026 Tiger Room. Google Play and the Google Play logo are trademarks of Google LLC.</span>
+    </div>
   </div>
 </footer>
 
+<script>
+(function () {
+  var T = {
+    ko: {
+      nav_games: '게임', nav_apps: '앱', nav_studio: '스튜디오', nav_contact: '문의',
+      eyebrow: '모바일 게임 스튜디오',
+      hero_title: '손끝으로 느끼는 게임을 만듭니다.',
+      hero_lead: '타이거룸은 말랑한 물리와 기분 좋은 소리, 모으고 싶은 캐릭터로 손이 즐거운 모바일 게임을 만듭니다.',
+      cta_games: '게임 보기', cta_contact: '문의하기',
+      games_kicker: '대표 게임', games_title: '게임',
+      mp_name: '말랑말랑 말랑픽: ASMR', mp_tag: '뽑고, 늘리고, 모으고!',
+      mp_desc: '손을 따라 쭉쭉 늘어나는 귀여운 말랑이와 기분 좋은 ASMR. 푸른바다부터 디저트카페까지, 캡슐을 뽑고 나만의 컬렉션을 모아요. 매일 무료 티켓으로 새 친구를 만나 보세요.',
+      mp_f1: '무료 플레이', mp_f2: '매일 무료 티켓', mp_f3: '한국어 · 영어 · 일본어', mp_site: '공식 사이트', shots: '스크린샷',
+      apps_kicker: '유틸리티 앱', apps_title: '앱', fg_label: '유틸리티',
+      fg_desc: 'K-pop 팬을 위한 한글 키보드·변환기·로마자 표기·팬 문구를 떠 있는 말풍선 하나로.', fg_site: '사이트',
+      studio_kicker: '스튜디오', studio_title: '타이거룸 소개',
+      studio_text: '타이거룸은 서울의 독립 모바일 게임 스튜디오입니다. 손끝의 감각과 소리를 중심으로 게임을 만들고, 한국어·영어·일본어로 선보입니다.',
+      p1_t: '손맛이 먼저', p1_d: '말랑한 몸의 물리와 직접 녹음한 ASMR 소리로 모든 손길에 반응합니다.',
+      p2_t: '모두에게 안전하게', p2_d: '어린 이용자를 위한 연령별 설정과 분명한 개인정보 선택을 제공합니다.',
+      p3_t: '계속 자라는 게임', p3_d: '업데이트로 새 친구와 테마가 계속 찾아옵니다.',
+      contact_text: '비즈니스·이용 문의',
+      l_privacy: '개인정보처리방침', l_terms: '이용약관', l_prob: '확률 정보', l_delete: '계정 삭제 안내',
+      biz: '타이거룸 · 사업자등록번호 629-25-02059 · 서울특별시 서초구 매헌로 16'
+    },
+    ja: {
+      nav_games: 'ゲーム', nav_apps: 'アプリ', nav_studio: 'スタジオ', nav_contact: 'お問い合わせ',
+      eyebrow: 'モバイルゲームスタジオ',
+      hero_title: '指先で感じるゲームをつくっています。',
+      hero_lead: 'タイガールームは、やわらかな手ざわりと心地よいサウンド、集めたくなるキャラクターで、指が楽しいモバイルゲームをつくっています。',
+      cta_games: 'ゲームを見る', cta_contact: 'お問い合わせ',
+      games_kicker: '代表作', games_title: 'ゲーム',
+      mp_name: 'マランピック：ぷにぷにスクイーズASMR', mp_tag: 'ガチャして、のばして、あつめよう！',
+      mp_desc: '指の動きにあわせてのび〜る、かわいいともだちと癒しのスクイーズASMR。「あおいうみ」から「スイーツカフェ」まで、ガチャでともだちをお迎えしてコレクションしよう。毎日もらえる無料チケットで遊べます。',
+      mp_f1: '基本無料', mp_f2: '毎日無料チケット', mp_f3: '韓国語・英語・日本語', mp_site: '公式サイト', shots: 'スクリーンショット',
+      apps_kicker: 'ユーティリティアプリ', apps_title: 'アプリ', fg_label: 'ユーティリティ',
+      fg_desc: 'K-POPファンのためのハングルキーボード、変換、ローマ字表記、ファンフレーズを、フローティングバブルひとつで。', fg_site: 'サイト',
+      studio_kicker: 'スタジオ', studio_title: 'タイガールームについて',
+      studio_text: 'タイガールームは韓国・ソウルのインディーモバイルゲームスタジオです。手ざわりとサウンドを軸にゲームをつくり、韓国語・英語・日本語でお届けしています。',
+      p1_t: '手ざわり第一', p1_d: 'やわらかな物理演算と録音したASMRサウンドで、触れるたびに反応します。',
+      p2_t: 'だれでも安心', p2_d: '年齢に合わせた設定と、わかりやすいプライバシーの選択肢を用意しています。',
+      p3_t: '成長し続ける', p3_d: 'アップデートで新しいともだちやテーマが登場します。',
+      contact_text: 'ビジネス・サポートのお問い合わせ',
+      l_privacy: 'プライバシーポリシー', l_terms: '利用規約', l_prob: '提供割合', l_delete: 'アカウント削除',
+      biz: 'タイガールーム・事業者登録番号 629-25-02059・大韓民国ソウル特別市瑞草区梅軒路16'
+    }
+  };
+  var EN = {};
+  document.querySelectorAll('[data-i18n]').forEach(function (el) { var k = el.getAttribute('data-i18n'); if (!(k in EN)) EN[k] = el.textContent; });
+  T.en = EN;
+  var BADGE = { en: 'https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png', ko: 'https://play.google.com/intl/ko/badges/static/images/badges/ko_badge_web_generic.png', ja: 'https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png' };
+  function apply(lang) {
+    var t = T[lang] || EN;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) { var k = el.getAttribute('data-i18n'); if (t[k]) el.textContent = t[k]; });
+    document.querySelectorAll('[data-badge]').forEach(function (img) { img.src = BADGE[lang] || BADGE.en; });
+    document.querySelectorAll('[data-shot]').forEach(function (img) { img.src = 'assets/malangpick/shot-' + lang + '-' + img.getAttribute('data-shot') + '.webp'; });
+    document.querySelectorAll('a[data-site="mallang"]').forEach(function (a) { var u = new URL(a.href); u.searchParams.set('lang', lang); a.href = u.toString(); });
+    document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false'); });
+    try { localStorage.setItem('tr-lang', lang); } catch (e) {}
+  }
+  var q = new URLSearchParams(location.search).get('lang'), saved = null;
+  try { saved = localStorage.getItem('tr-lang'); } catch (e) {}
+  var nav = (navigator.language || 'en').toLowerCase();
+  var lang = (q === 'ko' || q === 'en' || q === 'ja') ? q : (saved || (nav.indexOf('ko') === 0 ? 'ko' : nav.indexOf('ja') === 0 ? 'ja' : 'en'));
+  apply(lang);
+  document.querySelectorAll('.lang button').forEach(function (b) { b.addEventListener('click', function () { apply(b.getAttribute('data-lang')); }); });
+})();
+</script>
 </body>
 </html>

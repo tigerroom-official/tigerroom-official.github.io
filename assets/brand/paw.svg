@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><g fill="#d65d49"><ellipse cx="405" cy="268" rx="91" ry="125" transform="rotate(-12 405 268)"/><ellipse cx="619" cy="268" rx="91" ry="125" transform="rotate(12 619 268)"/>
+<ellipse cx="216" cy="425" rx="82" ry="113" transform="rotate(-28 216 425)"/><ellipse cx="808" cy="425" rx="82" ry="113" transform="rotate(28 808 425)"/>
+<path d="M512 432C609 432 645 488 712 575C765 644 790 729 730 788C684 834 620 821 570 792V715C570 680 548 660 512 660C476 660 454 680 454 715V792C404 821 340 834 294 788C234 729 259 644 312 575C379 488 415 432 512 432Z"/></g></svg>
